@@ -1,0 +1,16 @@
+program: train_first_cnn.py
+method: grid
+metric:
+  goal: minimize
+  name: val_loss
+parameters:
+  learn_rate:
+    values:[0.0001, 0.001, 0.1]
+  optimizer:
+    values: ["adam"]
+  batch_size:
+    values: [256]
+  epochs:
+    value: 200
+early_terminate:
+  type: hyperband
